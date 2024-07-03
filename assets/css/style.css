@@ -247,11 +247,11 @@ ul
 }
 /**************** Home container *************/
 
-.body-content 
+.home-container
 {
-  background: url("https://cdn.pixabay.com/photo/2024/05/20/17/33/sky-8775846_1280.png") center/cover no-repeat;
+  background: url("assets/images/bg.jpg") no-repeat center center;
+  background-size: cover;
 }
-
 /************* Contact Section ************/
 
 .page-heading

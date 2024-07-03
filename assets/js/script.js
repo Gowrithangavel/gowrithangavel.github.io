@@ -3,24 +3,32 @@
 
 //----------------------- About page ------------------
 
-function generatePDF() 
+function generatePDF()
 {
   console.log("Download button clicked");
 
   try 
   {
-      // Create new jsPDF instance
-      var doc = new jsPDF();
+      // URL of the pre-stored PDF file
+      const pdfUrl = 'assets/docs/GowrithangavelResume.pdf';
 
-      // Add content to the PDF
-      doc.text(20, 20, 'Gowri thangavel Resume');
+      // Create a temporary link element
+      const link = document.createElement('a');
+      link.href = pdfUrl;
+      link.download = 'Gowri_Thangavel_Resume.pdf';
 
-      // Save the PDF
-      doc.save('Gowri thangavel Resume.pdf');
+      // Append the link to the body
+      document.body.appendChild(link);
+
+      // Programmatically click the link to trigger the download
+      link.click();
+
+      // Clean up and remove the link
+      document.body.removeChild(link);
   } 
   catch (error) 
   {
-      console.error('Error generating PDF:', error);
+      console.error('Error downloading PDF:', error);
   }
 }
 
